@@ -1,0 +1,12 @@
+code book for the tidy.txt file
+activity_number code where:
+  1 WALKING
+  2 WALKING_UPSTAIRS
+  3 WALKING_DOWNSTAIRS
+  4 SITTING
+  5 STANDING
+  6 LAYING
+
+The remaining columns are given a name that indicates the measurement used along with the mean for all of these measurements for the given activity.
+
+The numbers remained in the file to make for easy summerization.
