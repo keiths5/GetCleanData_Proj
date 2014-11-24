@@ -46,5 +46,19 @@ rm(DF_Activity) #remove to free memory
 rm(DF_Measurement) #remove to free memory
 
 DF_tidy_Summary <- DF_Activity_Measurement %>% group_by(V1) %>% summarise_each(funs(mean))
-colnames(DF_tidy_Summary)<-c("activity_number", colnames(DF_tidy_Summary[2:7]))
+
+#don't need the numbers anymore now that the summarization is done
+DF_tidy_Summary <- DF_tidy_Summary[2:7,]
+
+#create the column names
+colnames(DF_tidy_Summary)<-c("activity", colnames(DF_tidy_Summary[2:7]))
+
+#read in the row names
+DF_tidy_Summary_headings <- read.delim2("UCI HAR Dataset/activity_labels.txt", sep=" ", header=FALSE)
+rownames(DF_tidy_Summary) <- DF_tidy_Summary_headings$V2
+
+#remove to clear memory
+rm(DF_tidy_Summary_headings)
+
+#write out the results
 write.table(DF_tidy_Summary, "tidy.txt")
