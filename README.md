@@ -18,3 +18,5 @@ The run_analysis.R code does the following:
 4) reads in the test and train activity frame
 5) binds the activity data frame onto the test and train measurement data frame
 6) creates the required tidy summary of mean for each of the measurements and activities.
+7) creates the row and column names for the tidy summary file
+8) writes out the tidy summary file.
